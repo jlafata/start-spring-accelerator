@@ -40,12 +40,12 @@ engine:
       chain:
         - type: ReplaceText
           substitutions:
-            - text: $project-name
+            - text: "$project-name"
               with: #projectName 
-            - text: $javaVersion
+            - text: "$javaVersion"
               with: #javaVersion
-            - text: $springBootVersion
+            - text: "$springBootVersion"
               with: #springBootVersion
-            - text: $projectDependencies
+            - text: "$projectDependencies"
               with: #projectDependencies
 # in build.gradle file  conditionally include (or delete )dependencies based on project dependencies 
