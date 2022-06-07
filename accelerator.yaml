@@ -18,34 +18,34 @@ accelerator:
       dataType: string
       inputType: text
       required: true
-      defaultValue: 11
+      defaultValue: "11"
     - name: springBootVersion
       label: Spring Boot Version
       description: Spring Boot Version
       dataType: string
       inputType: text
       required: true
-      defaultValue: 3.0.0-M3
+      defaultValue: "3.0.0-M3"
     - name: projectDependencies 
       label: Project Dependencies
       description: Project dependencies (e.g. WEB, REST, JPA, DEV-TOOLS )
       dataType: string
       inputType: text
       required: true
-      defaultValue: WEB
+      defaultValue: "WEB"
 
-engine:
-  merge:
-    - include: [ "**" ]
-      chain:
-        - type: ReplaceText
-          substitutions:
-            - text: "i$project-name"
-              with: "#projectName" 
-            - text: "$javaVersion"
-              with: "#javaVersion"
-            - text: "$springBootVersion"
-              with: "#springBootVersion"
-            - text "$projectDependencies"
-              with: "#projectDependencies"
+#engine:
+#  merge:
+#    - include: [ "**" ]
+#      chain:
+#        - type: ReplaceText
+#          substitutions:
+#            - text: "$project-name"
+#              with: "#projectName" 
+#            - text: javaVersion
+#              with: #javaVersion
+#            - text: springBootVersion
+#              with: #springBootVersion
+#            - text: "$projectDependencies"
+#              with: #projectDependencies
 # in build.gradle file  conditionally include (or delete )dependencies based on project dependencies 
