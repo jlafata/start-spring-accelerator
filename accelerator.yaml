@@ -34,18 +34,18 @@ accelerator:
       required: true
       defaultValue: "WEB"
 
-#engine:
-#  merge:
-#    - include: [ "**" ]
-#      chain:
-#        - type: ReplaceText
-#          substitutions:
-#            - text: "project-name"
-#              with: #projectName 
-#            - text: "java-version"
-#              with: #javaVersion
-#            - text: "spring-boot-version"
-#              with: #springBootVersion
-#            - text: "projectDependencies"
-#              with: #projectDependencies
+engine:
+  merge:
+    - include: [ "**" ]
+      chain:
+        - type: ReplaceText
+          substitutions:
+            - text: "project-name"
+              with: #projectName 
+            - text: "java-version"
+              with: #javaVersion
+            - text: "spring-boot-version"
+              with: #springBootVersion
+            - text: "projectDependencies"
+              with: #projectDependencies
 # in build.gradle file  conditionally include (or delete )dependencies based on project dependencies 
