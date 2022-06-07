@@ -1,0 +1,51 @@
+accelerator:
+  displayName: Start Spring Accelerator
+  description: Experimental Accelerator the replicates The Spring Initializer functionality (for approved application architectures)
+  iconUrl: https://raw.githubusercontent.com/simple-starters/icons/master/icon-tanzu-light.png
+  tags:
+    - Tanzu
+    - Accelerator
+  options:
+    - name: projectName
+      label: Name for project within Kubernetes
+      description: Kubernetes resource name for your project - see https://kubernetes.io/docs/concepts/overview/working-with-objects/names/
+      required: true
+      dataType: string
+      inputType: text
+    - name: javaVersion
+      label: java version
+      description: java version for runtime (11, 17, 18)
+      dataType: string
+      inputType: text
+      required: true
+      defaultValue: 11
+    - name: springBootVersion
+      label: Spring Boot Version
+      description: Spring Boot Version
+      dataType: string
+      inputType: text
+      required: true
+      defaultValue: 3.0.0-M3
+    - name: projectDependencies 
+      label: Project Dependencies
+      description: Project dependencies (e.g. WEB, REST, JPA, DEV-TOOLS )
+      dataType: string
+      inputType: text
+      required: true
+      defaultValue: WEB
+
+engine:
+  merge:
+    - include: [ "**" ]
+      chain:
+        - type: ReplaceText
+          substitutions:
+            - text: "i$project-name"
+              with: "#projectName" 
+            - text: "$javaVersion"
+              with: "#javaVersion"
+            - text: "$springBootVersion"
+              with: "#springBootVersion"
+            - text "$projectDependencies"
+              with: "#projectDependencies"
+# in build.gradle file  conditionally include (or delete )dependencies based on project dependencies 
