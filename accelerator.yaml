@@ -34,9 +34,9 @@ accelerator:
       required: true
       defaultValue: "WEB"
 
-engine:
-  merge:
-    - include: [ "**" ]
+#engine:
+#  merge:
+#    - include: [ "**" ]
 #      chain:
 #        - type: ReplaceText
 #          substitutions:
