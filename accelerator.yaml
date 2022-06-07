@@ -41,11 +41,11 @@ engine:
         - type: ReplaceText
           substitutions:
             - text: "$project-name"
-              with: #projectName 
+              with: "#projectName" 
             - text: "$javaVersion"
-              with: #javaVersion
+              with: "#javaVersion"
             - text: "$springBootVersion"
-              with: #springBootVersion
+              with: "#springBootVersion"
             - text: "$projectDependencies"
-              with: #projectDependencies
+              with: "#projectDependencies"
 # in build.gradle file  conditionally include (or delete )dependencies based on project dependencies 
