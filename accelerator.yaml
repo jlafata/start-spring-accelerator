@@ -42,9 +42,9 @@ engine:
           substitutions:
             - text: "project-name"
               with: "#projectName" 
-            - text: "java-version"
+            - text: java-version
               with: "#javaVersion"
-            - text: "spring-boot-version"
+            - text: spring-boot-version
               with: "#springBootVersion"
             - text: "projectDependencies"
               with: "#projectDependencies"
