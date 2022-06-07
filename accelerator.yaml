@@ -40,7 +40,7 @@ engine:
       chain:
         - type: ReplaceText
           substitutions:
-            - text: "project-name"
+            - text: $project-name
               with: "#projectName" 
             - text: java-version
               with: "#javaVersion"
