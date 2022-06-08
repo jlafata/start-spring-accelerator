@@ -37,7 +37,8 @@ accelerator:
 engine:
   merge:
     - include: ["**/*"]
-    - include: ["**/build.gradle","**/gradle.settings]      chain:
+      exclude: [ "**/build.gradle","**/gradle.settings" ]
+    - include: [ "**/build.gradle","**/gradle.settings" ]
       chain:
         - type: ReplaceText
           substitutions:
