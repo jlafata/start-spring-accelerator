@@ -53,9 +53,9 @@ engine:
         - type: ReplaceText
           substitutions:
             - text: "compileOnly 'org.projectlombok:lombok'"
-              with: " "
+              with: "test"
             - text: "annotationProcessor 'org.projectlombok:lombok'"
-              with: " "
+              with: "test"
 #        implementation 'org.springframework.boot:spring-boot-starter-actuator'
 #        implementation 'org.springframework.boot:spring-boot-starter-data-rest'
 #        implementation 'org.springframework.boot:spring-boot-starter-web'
