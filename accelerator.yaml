@@ -37,8 +37,8 @@ accelerator:
 engine:
   merge:
     - include: ["**/*"]
-      exclude: [ "**/build.gradle","**/gradle.settings" ]
-    - include: [ "**/build.gradle","**/gradle.settings" ]
+      exclude: [ "**/build.gradle","**/settings.gradle" ]
+    - include: [ "**/build.gradle","**/settings.gradle" ]
       chain:
         - type: ReplaceText
           substitutions:
@@ -48,6 +48,18 @@ engine:
               with: "#javaVersion"
             - text: $spring-boot-version
               with: "#springBootVersion"
-#            - text: "projectDependencies"
-#              with: "#projectDependencies"
+      condition: "#projectDependenciese != 'LOMBOK'"
+      chain:
+        - type: ReplaceText
+          substitutions:
+            - text: "compileOnly 'org.projectlombok:lombok'"
+              with: ""
+            - text: "annotationProcessor 'org.projectlombok:lombok'"
+              with: ""
+#        implementation 'org.springframework.boot:spring-boot-starter-actuator'
+#        implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+#        implementation 'org.springframework.boot:spring-boot-starter-web'
+
+#        compileOnly 'org.projectlombok:lombok'
+#        annotationProcessor 'org.projectlombok:lombok'
             
