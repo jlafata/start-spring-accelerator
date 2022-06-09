@@ -40,6 +40,10 @@ engine:
       exclude: [ "**/build.gradle","**/settings.gradle" ]
     - include: [ "**/build.gradle","**/settings.gradle" ]
       chain:
+        - type: Let
+          symbols:
+          - name: emptyLine
+            expression: " "
         - type: ReplaceText
           substitutions:
             - text: $project-name
@@ -53,9 +57,10 @@ engine:
         - type: ReplaceText
           substitutions:
             - text: "compileOnly 'org.projectlombok:lombok'"
-              with: "test"
+              with: "#emptyLine"
             - text: "annotationProcessor 'org.projectlombok:lombok'"
-              with: "test"
+              with: "#emptyLine"
+
 #        implementation 'org.springframework.boot:spring-boot-starter-actuator'
 #        implementation 'org.springframework.boot:spring-boot-starter-data-rest'
 #        implementation 'org.springframework.boot:spring-boot-starter-web'
