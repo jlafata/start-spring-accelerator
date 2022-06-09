@@ -43,7 +43,7 @@ engine:
         - type: Let
           symbols:
           - name: emptyLine
-            expression: " "
+            expression: "# "
         - type: ReplaceText
           substitutions:
             - text: $project-name
